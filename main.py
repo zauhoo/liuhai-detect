@@ -1,11 +1,20 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @File  : main.py
+# @Author: XuHao Zhang
+# @Date  : 2021/01/24
+# @Desc  :
+# @Contact : xuhaozhang_hfut@163.com
+
+
 import sys
-import hello
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5 import QtWidgets
+
+from detect.detect import Detect
+
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    MainWindow = QMainWindow()
-    ui = hello.Ui_MainWindow()
-    ui.init(MainWindow)
-    MainWindow.show()
+    app = QtWidgets.QApplication(sys.argv)
+    window = Detect()
+    window.show()
     sys.exit(app.exec_())
