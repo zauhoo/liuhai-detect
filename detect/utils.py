@@ -56,6 +56,7 @@ def image_process(img):
     area_detect = cv2.contourArea(brow_contour)
     area_predict = cv2.contourArea(face_contour) * 0.2
     value_detect = "有眉毛遮挡" if area_detect < area_predict else "无眉毛遮挡"
+
     return img_process, area_detect, area_predict, value_detect
 
 
@@ -109,6 +110,7 @@ def _get_skin_image(img):
                 img_skin.itemset((row, col, 0), 0)
                 img_skin.itemset((row, col, 1), 0)
                 img_skin.itemset((row, col, 2), 0)
+
     return img_skin
 
 
@@ -129,4 +131,5 @@ def _get_face_contour(img):
         if area > face_area:
             face_contour = contour
             face_area = area
+
     return face_contour
