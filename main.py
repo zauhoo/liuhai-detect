@@ -5,8 +5,6 @@
 # @Date  : 2021/01/24
 # @Desc  :
 # @Contact : xuhaozhang_hfut@163.com
-
-
 import sys
 from PyQt5 import QtWidgets
 

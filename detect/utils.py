@@ -5,8 +5,6 @@
 # @Date  : 2021/1/16
 # @Desc  :
 # @Contact : xuhaozhang_hfut@163.com
-
-
 import os
 import dlib
 import numpy

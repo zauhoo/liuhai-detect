@@ -5,8 +5,6 @@
 # @Date  : 2021/1/16
 # @Desc  :
 # @Contact : xuhaozhang_hfut@163.com
-
-
 import cv2
 
 from detect.utils import *
@@ -15,7 +13,7 @@ from client.client import Ui_MainWindow
 
 class Detect(QtWidgets.QMainWindow):
     def __init__(self):
-        QtWidgets.QMainWindow.__init__(self)
+        super(Detect, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.b_readImg.clicked.connect(self.image_read)
@@ -45,7 +43,9 @@ class Detect(QtWidgets.QMainWindow):
     def image_read(self):
         """ """
         # 获取文件夹下所有的‘.jpg’图像
-        self.dir_path = self.ui.e_imgPath.text()
+        self.dir_path = QtWidgets.QFileDialog.getExistingDirectory(self,
+                                                                   "选取文件夹",
+                                                                   "C:/")
         self.img_file = os.listdir(self.dir_path)
 
         self._setting_detect_information(self.img_count)
